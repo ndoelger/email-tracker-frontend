@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getUrl, getToken } from "../utilities/requests";
+import { getUrl } from "../utilities/requests";
 
 export const Login = () => {
   // const [user, setUser] = useState(getToken());
