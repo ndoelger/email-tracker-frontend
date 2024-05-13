@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getHubspotLoginUrl, getToken } from "../utilities/user";
+import { getUrl, getToken } from "../utilities/user";
 
 export const Login = () => {
   // const [user, setUser] = useState(getToken());
@@ -8,7 +8,7 @@ export const Login = () => {
 
   useEffect(() => {
     async function fetchUrl() {
-      const fetchedUrl = await getHubspotLoginUrl();
+      const fetchedUrl = await getUrl();
       setUrl(fetchedUrl);
     }
     fetchUrl();
