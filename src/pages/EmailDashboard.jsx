@@ -4,7 +4,7 @@ import { getEmails } from "../utilities/user";
 import { EmailLine } from "../components/EmailLine";
 
 export const EmailDashboard = () => {
-  const [emails, setEmails] = useState({});
+  const [emails, setEmails] = useState(null);
 
   const fetchEmails = async () => {
     const response = await getEmails();
