@@ -1,7 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { getEmails } from "../utilities/user";
+import { getEmails } from "../utilities/requests";
 import { EmailLine } from "../components/EmailLine";
+import { AddEmail } from "../components/AddEmail";
 
 export const EmailDashboard = () => {
   const [emails, setEmails] = useState(null);
@@ -22,7 +23,7 @@ export const EmailDashboard = () => {
           {/* head */}
           <thead>
             <tr>
-              <th>Title</th>
+              <th>Name</th>
               <th>Subject</th>
               <th>Preview</th>
             </tr>
@@ -35,7 +36,7 @@ export const EmailDashboard = () => {
                   id={email.id}
                   subject={email.subject}
                   preview={email.preview}
-                  title={email.title}
+                  name={email.name}
                 />
               ))
             ) : (
@@ -44,6 +45,7 @@ export const EmailDashboard = () => {
           </tbody>
         </table>
       </div>
+      <AddEmail fetchEmails={fetchEmails} />
     </>
   );
 };
