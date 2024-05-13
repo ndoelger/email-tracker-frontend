@@ -1,17 +1,21 @@
 // App.js
 
-import React from 'react';
-import OAuthButton from './components/OAuthButton';  // Assuming OAuthButton is in the same directory
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import { Login } from "./pages/Login";
+import { EmailDashboard } from "./pages/EmailDashboard";
 
 function App() {
-    return (
-        <div className="App">
-            <header className="App-header">
-                <h1>Welcome to Our Application</h1>
-                <a href='http://localhost:3001/'>Login</a>
-            </header>
-        </div>
-    );
+  return (
+    <div className="App">
+      <>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/dashboard" element={<EmailDashboard />} />
+        </Routes>
+      </>
+    </div>
+  );
 }
 
 export default App;
