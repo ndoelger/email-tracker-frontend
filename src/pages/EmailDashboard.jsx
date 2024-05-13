@@ -37,6 +37,7 @@ export const EmailDashboard = () => {
                   subject={email.subject}
                   preview={email.preview}
                   name={email.name}
+                  fetchEmails={fetchEmails}
                 />
               ))
             ) : (

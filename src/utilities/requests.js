@@ -9,11 +9,22 @@ export const getEmails = async () => {
   }
 };
 
-export const addEmail = async (properties) => {
+export const addEmail = async (payload) => {
   try {
     const response = await axios.post("http://localhost:3001/email/add", {
-      properties,
+      payload,
     });
+    console.log(response.data);
+  } catch (error) {
+    console.error("Error:", error.response ? error.response.data : error);
+  }
+};
+
+export const removeEmail = async (id) => {
+  try {
+    const response = await axios.delete(
+      `http://localhost:3001/email/${id}`
+    );
     console.log(response.data);
   } catch (error) {
     console.error("Error:", error.response ? error.response.data : error);
