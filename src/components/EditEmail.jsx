@@ -13,6 +13,8 @@ export const EditEmail = ({ id, name, preview, subject, fetchEmails }) => {
     evt.preventDefault();
     await updateEmail(id, email);
     await fetchEmails();
+    document.getElementById(`my_modal_${id}`).close();
+
   };
 
   const handleChange = (evt) => {
@@ -23,18 +25,17 @@ export const EditEmail = ({ id, name, preview, subject, fetchEmails }) => {
   return (
     <>
       <button
-        className="btn btn-ghost btn-xs"
+        className="btn btn-ghost btn-m bg-gray-900"
         onClick={() => document.getElementById(`my_modal_${id}`).showModal()}>
         edit{" "}
       </button>
       <dialog id={`my_modal_${id}`} className="modal">
-        <div className="modal-box">
-          <h3 className="font-bold text-lg">Edit</h3>
-          <p className="py-4">
-            Press ESC key or click the button below to close
-          </p>
+        <div className="h-1/3 bg-gray-800 flex flex-wrap justify-center align-middle modal-box">
+          <h3 className="font-bold text-lg">Edit Email</h3>
           <div className="modal-action">
-            <form className="grid" onSubmit={handleSubmit}>
+            <form
+              className="grid justify-end justify-items-end"
+              onSubmit={handleSubmit}>
               <label>
                 Name{" "}
                 <input
@@ -43,7 +44,7 @@ export const EditEmail = ({ id, name, preview, subject, fetchEmails }) => {
                   value={email.name}
                   onChange={handleChange}
                   required
-                  className="w-30 input input-bordered max-w-xs"
+                  className="w-30 input input-bordered max-w-xs text-black"
                 />
               </label>
 
@@ -55,7 +56,7 @@ export const EditEmail = ({ id, name, preview, subject, fetchEmails }) => {
                   value={email.subject}
                   onChange={handleChange}
                   required
-                  className="w-30 input input-bordered max-w-xs"
+                  className="w-30 input input-bordered max-w-xs text-black"
                 />
               </label>
 
@@ -67,7 +68,7 @@ export const EditEmail = ({ id, name, preview, subject, fetchEmails }) => {
                   value={email.preview}
                   onChange={handleChange}
                   required
-                  className="w-30 input input-bordered max-w-xs"
+                  className="w-30 input input-bordered max-w-xs text-black"
                 />
               </label>
 
