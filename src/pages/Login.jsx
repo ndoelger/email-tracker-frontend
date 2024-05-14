@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { getUrl } from "../utilities/requests";
 
 export const Login = () => {
-  // const [user, setUser] = useState(getToken());
-
   const [url, setUrl] = useState("");
 
   useEffect(() => {
