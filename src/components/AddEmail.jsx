@@ -26,14 +26,16 @@ export const AddEmail = ({ fetchEmails }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form
+        className="w-full max-w-3xl flex justify-between items-center text-black mt-8"
+        onSubmit={handleSubmit}>
         <input
           type="text"
           name="name"
           value={email.name}
           onChange={handleChange}
           required
-          className="w-30 input input-bordered max-w-xs"
+          className="flex-1 m-2 p-2 input input-bordered"
           placeholder="Name"
         />
         <input
@@ -42,7 +44,7 @@ export const AddEmail = ({ fetchEmails }) => {
           value={email.subject}
           onChange={handleChange}
           required
-          className="w-30 input input-bordered max-w-xs"
+          className="flex-1 m-2 p-2 input input-bordered"
           placeholder="Subject"
         />
         <input
@@ -51,11 +53,12 @@ export const AddEmail = ({ fetchEmails }) => {
           value={email.preview}
           onChange={handleChange}
           required
-          className="w-30 input input-bordered max-w-xs"
+          className="flex-1 m-2 p-2 input input-bordered"
           placeholder="Preview"
         />
-
-        <button className="btn btn-ghost btn-xs">submit</button>
+        <button className="m-2 p-2 btn btn-ghost bg-gray-900 text-white">
+          Submit
+        </button>
       </form>
     </>
   );

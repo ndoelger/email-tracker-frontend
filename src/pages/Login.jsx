@@ -13,9 +13,17 @@ export const Login = () => {
   }, []);
 
   return (
-    <header className="App-header">
-      <h1>Welcome to Our Application</h1>
-      {url && <a href={url}>Login</a>}
-    </header>
+    <div className="App">
+      <header className="App-header bg-gray-800 text-white p-6 flex flex-col items-center justify-center min-h-screen">
+        <h1 className="text-4xl font-bold text-center mb-4">
+          Welcome to The Email Tracker 😁
+        </h1>
+        {url && (
+          <a href={url} className="text-xl underline">
+            Login
+          </a>
+        )}
+      </header>
+    </div>
   );
 };
