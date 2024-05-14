@@ -1,5 +1,6 @@
 import React from "react";
 import { removeEmail } from "../utilities/requests";
+import { EditEmail } from "./EditEmail";
 
 export const EmailLine = ({ id, subject, preview, name, fetchEmails }) => {
   const deleteEmail = async () => {
@@ -29,6 +30,15 @@ export const EmailLine = ({ id, subject, preview, name, fetchEmails }) => {
               />
             </svg>
           </button>
+        </td>
+        <td>
+          <EditEmail
+            id={id}
+            subject={subject}
+            preview={preview}
+            name={name}
+            fetchEmails={fetchEmails}
+          />
         </td>
       </tr>
     </>
