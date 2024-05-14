@@ -37,8 +37,8 @@ export const EmailDashboard = () => {
               <tbody>
                 {emails.map((email) => (
                   <EmailLine
-                    key={email.id}
-                    id={email.id}
+                    key={email.email_id}
+                    id={email.email_id}
                     subject={email.subject}
                     preview={email.preview}
                     name={email.name}

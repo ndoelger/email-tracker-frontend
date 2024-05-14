@@ -34,7 +34,7 @@ export const removeEmail = async (id) => {
 
 export const updateEmail = async (id, payload) => {
   try {
-    const response = await axios.patch(`http://localhost:3001/email/${id}`, {
+    const response = await axios.put(`http://localhost:3001/email/${id}`, {
       payload,
     });
     console.log(response.data);
