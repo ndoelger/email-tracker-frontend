@@ -12,11 +12,11 @@ export const AddEmail = ({ fetchEmails }) => {
     evt.preventDefault();
     await addEmail(email);
     await fetchEmails();
-    // setEmail({
-    //   name: "",
-    //   subject: "",
-    //   preview: "",
-    // });
+    setEmail({
+      name: "",
+      subject: "",
+      preview: "",
+    });
   };
 
   const handleChange = (evt) => {
