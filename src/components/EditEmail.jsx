@@ -14,7 +14,6 @@ export const EditEmail = ({ id, name, preview, subject, fetchEmails }) => {
     await updateEmail(id, email);
     await fetchEmails();
     document.getElementById(`my_modal_${id}`).close();
-
   };
 
   const handleChange = (evt) => {
