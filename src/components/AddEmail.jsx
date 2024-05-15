@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { addEmail } from "../utilities/requests";
 
 export const AddEmail = ({ fetchEmails }) => {
+  // EMAIL FORM
   const [email, setEmail] = useState({
     name: "",
     subject: "",
     preview: "",
   });
 
+  // SETS EMAIL FORM TO THE API
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     await addEmail(email);
@@ -19,6 +21,7 @@ export const AddEmail = ({ fetchEmails }) => {
     });
   };
 
+  // CHANGES EMAIL FORM IN REAL TIME
   const handleChange = (evt) => {
     const emailData = { ...email, [evt.target.name]: evt.target.value };
     setEmail(emailData);

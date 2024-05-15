@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getUrl } from "../utilities/requests";
 
 export const Login = () => {
+  // GETS THE OAUTH EMAIL FROM THE BACKEND
   const [url, setUrl] = useState("");
 
   useEffect(() => {

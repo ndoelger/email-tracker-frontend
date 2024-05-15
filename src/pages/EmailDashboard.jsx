@@ -9,13 +9,14 @@ export const EmailDashboard = () => {
   const [emails, setEmails] = useState(null);
   const [limit, setLimit] = useState(5);
 
+  // Gets all emails
   const fetchEmails = async () => {
     const response = await getEmails(limit);
     setEmails(response);
   };
 
-  const fetchMoreEmails = async () => {};
 
+  // Only fetches emails once when the page loads
   useEffect(() => {
     fetchEmails();
   }, [limit]);

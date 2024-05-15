@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// GERS ALL EMAILS
 export const getEmails = async (limit) => {
   try {
     const response = await axios.get("http://localhost:3001/email", {
@@ -12,6 +13,7 @@ export const getEmails = async (limit) => {
   }
 };
 
+// CREATES AN EMAIL
 export const addEmail = async (payload) => {
   try {
     const response = await axios.post("http://localhost:3001/email/add", {
@@ -23,6 +25,7 @@ export const addEmail = async (payload) => {
   }
 };
 
+// DELETES AN EMAIL
 export const removeEmail = async (id) => {
   try {
     const response = await axios.delete(`http://localhost:3001/email/${id}`);
@@ -32,6 +35,7 @@ export const removeEmail = async (id) => {
   }
 };
 
+// EDITS AN EMAIL
 export const updateEmail = async (id, payload) => {
   try {
     const response = await axios.patch(`http://localhost:3001/email/${id}`, {
@@ -43,6 +47,7 @@ export const updateEmail = async (id, payload) => {
   }
 };
 
+// GETS OAUTH URL
 export const getUrl = async () => {
   try {
     const response = await axios.get("http://localhost:3001/login");

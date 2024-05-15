@@ -1,3 +1,4 @@
+// SETS LIMIT TO HOW MANY EMAILS TO RETURN
 import React from "react";
 
 export const Pagination = ({setLimit}) => {
@@ -9,7 +10,7 @@ export const Pagination = ({setLimit}) => {
         2
       </option>
       <option selected value={5}>5</option>
-      <option value={10}>10</option>
+      <option value={100}>100</option>
     </select>
   );
 };
